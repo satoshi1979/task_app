@@ -49,11 +49,26 @@ class TaskController extends Controller
     }
 
 
-    public function select() {}
+    public function edit($id)
+    {
+        $task = Task::find($id);
+        return view('tasks.edit', ['task' => $task]);
+    }
 
-    public function insert() {}
 
-    public function update() {}
+    public function update(Request $request, $id)
+    {
+        // ここはidで探して持ってくる以外はstoreと同じ
+        $task = Task::find($id);
 
-    public function delete() {}
+        // 値の用意
+        $task->title = $request->title;
+        $task->body = $request->body;
+
+        // 保存
+        $task->save();
+
+        // 登録したらindexに戻る
+        return redirect(route('tasks.index'));
+    }
 }

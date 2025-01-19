@@ -15,7 +15,8 @@
     <p>【内容】</p>
     <p>{{ $task->body }}</p>
     <input type="button" onclick="location.href='{{ route('tasks.index') }}'" value="一覧へ戻る">
-    <input type="button" onclick="location.href='/tasks'" value="編集する">
+    <!-- $taskのidを元に編集ページへ遷移する -->
+    <button onclick="location.href='{{ route('tasks.edit', $task) }}'">編集する</button>
     <input type="button" onclick="location.href='/tasks'" value="削除する">
 </body>
 
