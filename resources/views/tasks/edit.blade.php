@@ -10,7 +10,24 @@
 
 <body>
     <h1>タスク編集</h1>
-    <!-- 更新先はmemosのidにしないと増える sail artisan rote:listで確認① -->
+
+
+
+    @if ($errors->any())
+        <div class="error">
+            <p>
+                <b>{{ count($errors) }}件のエラーがあります。</b>
+            </p>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
+
     <form action="{{ route('tasks.update', $task) }}" method="post">
         @csrf
         @method('PATCH')
