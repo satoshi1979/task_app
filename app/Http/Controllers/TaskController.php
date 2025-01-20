@@ -71,4 +71,12 @@ class TaskController extends Controller
         // 登録したらindexに戻る
         return redirect(route('tasks.index'));
     }
+
+    public function destroy($id)
+    {
+        $memo = Task::find($id);
+        $memo->delete();
+
+        return redirect(route('tasks.index'));
+    }
 }
