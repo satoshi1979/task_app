@@ -15,8 +15,8 @@ class TaskSeeder extends Seeder
     {
         // 一件だけinsertする
         DB::table('tasks')->insert([
-            'title' => 'PHP',
-            'body' => 'PHPは、Hypertext Preprocessorの略です。',
+            'title' => 'テストタスク1',
+            'body' => 'テストタスク1の内容です。',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -24,14 +24,14 @@ class TaskSeeder extends Seeder
         # paramに配列を代入
         $param = [
             [
-                'title' => 'HTML',
-                'body' => 'HTMLは、Hypertext Markup Languageの略です。',
+                'title' => 'テストタスク2',
+                'body' => 'テストタスク2の内容です。',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
-                'title' => 'CSS',
-                'body' => "CSSは、\nCascading Style Sheets\nの略です。",
+                'title' => 'テストタスク3',
+                'body' => "テストタスク3\nの内容です。",
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]

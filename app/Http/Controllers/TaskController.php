@@ -9,8 +9,6 @@ use App\Http\Requests\TaskRequest;
 class TaskController extends Controller
 {
 
-
-    // indexページへ移動
     public function index()
     {
         // モデル名::テーブル全件取得
@@ -58,10 +56,10 @@ class TaskController extends Controller
 
     public function update(TaskRequest $request, $id)
     {
-        // ここはidで探して持ってくる以外はstoreと同じ
+
         $task = Task::find($id);
 
-        // 値の用意
+
         $task->title = $request->title;
         $task->body = $request->body;
 
